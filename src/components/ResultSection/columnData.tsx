@@ -12,7 +12,7 @@ const columns = [
     title: "STATUS",
     dataIndex: "orderBuyerStatus",
     render: (status: string) => (
-      <Tag className={`fw-extra-bold border-radius-5 p-x-2 status--${status}`}>
+      <Tag className={`fw-extra-bold border-radius-5 p-x-1 status--${status}`}>
         {status.toUpperCase()}
       </Tag>
     ),
@@ -29,7 +29,7 @@ const columns = [
       txt: string,
       { vendorName, isPendingVendorOnboarding, isBYOS }: IOrderSummary
     ) => (
-      <div className="flex">
+      <>
         <span className="m-r-1">{vendorName}</span>
         {!isBYOS && (
           <Tag className="m-r-1 bg__color--black txt-white">Market</Tag>
@@ -37,7 +37,7 @@ const columns = [
         {isPendingVendorOnboarding && (
           <Tag className="bg__color--yellow border--yellow">1st</Tag>
         )}
-      </div>
+      </>
     ),
   },
   {
