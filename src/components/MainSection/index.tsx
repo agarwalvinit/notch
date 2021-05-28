@@ -75,7 +75,7 @@ const MainSection: FC = () => {
     fetchData();
   }, []);
 
-  const handleSearchBar = (value: string = ALL_SUPPLIER) => {
+  const updateSearch = (value: string = ALL_SUPPLIER) => {
     let selectedList;
     if (value === ALL_SUPPLIER) {
       selectedList = AllSuppliersList;
@@ -84,6 +84,20 @@ const MainSection: FC = () => {
     }
     updateSelectedSupplier(value);
     updateResult(selectedList);
+    updateDataLoading(false);
+    updateSupplierListLoading(false);
+  };
+
+  const handleSearchBar = (value: string = ALL_SUPPLIER) => {
+    if (selectedSupplier !== value) {
+      updateDataLoading(true);
+      updateSupplierListLoading(true);
+      setTimeout(() => {
+        updateSearch(value);
+      }, 100);
+    } else {
+      /* empty else */
+    }
   };
 
   return (
