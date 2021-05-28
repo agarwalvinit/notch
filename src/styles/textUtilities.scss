@@ -1,0 +1,29 @@
+@import "./guideline.scss";
+
+.txt-s {
+  font-size: $small;
+}
+
+.txt-md {
+  font-size: $medium;
+}
+
+.txt-l {
+  font-size: $large;
+}
+
+.fw-extra-bold {
+  font-weight: $wt-extra-bold;
+}
+
+.txt-black {
+  color: $black;
+}
+
+.txt-white {
+  color: $white;
+}
+
+.txt-error {
+  color: $red-1;
+}

@@ -1,0 +1,29 @@
+@import "../../styles/guideline.scss";
+
+.search-bar__container {
+  background-color: $gray-2;
+  min-height: 100px;
+}
+
+.input__block {
+  padding-left: 40px;
+}
+
+.reset__button {
+  width: 120px;
+}
+
+/* override ant default colors */
+.ant-btn-primary {
+  background-color: $green-1;
+  border-color: $green-1;
+}
+
+.ant-btn-primary:focus,
+.ant-btn-primary:hover {
+  background: $green-2;
+  border-color: $green-2;
+}
+.ant-select-arrow {
+  top: 45%;
+}

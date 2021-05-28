@@ -1,0 +1,25 @@
+@import "./guideline.scss";
+
+.cp {
+  cursor: pointer;
+}
+
+.display--none {
+  display: none !important;
+}
+
+.display--block {
+  display: block;
+}
+
+.border--none {
+  border: none;
+}
+
+.bg__color--white {
+  background-color: $white;
+}
+
+.bg__color--black {
+  background-color: $black;
+}

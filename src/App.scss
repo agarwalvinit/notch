@@ -1,0 +1,8 @@
+/* Importing all the common stylesheet at the root of the project,
+so that common classes are available throughout the project */
+
+@import "./styles/guideline.scss";
+@import "./styles/textUtilities.scss";
+@import "./styles/spacingUtilities.scss";
+@import "./styles/alignmentUtilities.scss";
+@import "./styles/general.scss";

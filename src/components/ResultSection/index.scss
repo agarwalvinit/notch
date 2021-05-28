@@ -1,0 +1,22 @@
+@import "../../styles/guideline.scss";
+
+.status {
+  &--Delivered {
+    background-color: $blue-1;
+  }
+  &--Paid {
+    background-color: $green-4;
+  }
+}
+
+.bg__color--yellow {
+  background-color: $yellow;
+}
+
+.border--yellow {
+  border-color: $yellow;
+}
+
+.border-radius-5 {
+  border-radius: 5px;
+}
