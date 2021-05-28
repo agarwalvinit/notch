@@ -47,7 +47,7 @@ const columns = [
       compare: (a: IOrderSummary, b: IOrderSummary) => a?.total - b?.total,
       multiple: 3,
     },
-    render: (total: number) => <div>{`$${total.toFixed(2)}`}</div>,
+    render: (total: number) => <div>{!!total && `$${total.toFixed(2)}`}</div>,
   },
 ];
 
