@@ -1,3 +1,17 @@
+## Demo link
+Open [http://notch-food-ordering.herokuapp.com/](http://notch-food-ordering.herokuapp.com)
+
+## Things included
+
+- [x] Mobile-friendly
+- [x] Pagination
+- [x] Column Sorting
+- [x] Typescript
+- [x] SCSS
+- [x] Redux
+- [ ] Storybook
+- [ ] Testcases
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
