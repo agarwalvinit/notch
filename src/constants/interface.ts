@@ -6,6 +6,7 @@ export interface IOrderSummary {
   isPendingVendorOnboarding: boolean;
   isBYOS: boolean;
   total: number | 0;
+  key?: number;
 }
 
 export interface IActionType {

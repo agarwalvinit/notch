@@ -4,12 +4,12 @@ import { Table } from "antd";
 import { IOrderSummary } from "../../constants/interface";
 import ColumnData from "./columnData";
 
-interface IResultSectionProps {
+export interface IOrderTableProps {
   result: Array<IOrderSummary>;
   dataLoading: boolean;
 }
 
-const ResultSection = ({ result, dataLoading }: IResultSectionProps) => (
+const OrderTable = ({ result, dataLoading }: IOrderTableProps) => (
   <div className="p-a-1 bg__color--white">
     <Table
       dataSource={result}
@@ -20,4 +20,4 @@ const ResultSection = ({ result, dataLoading }: IResultSectionProps) => (
   </div>
 );
 
-export default ResultSection;
+export default OrderTable;

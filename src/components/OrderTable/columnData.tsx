@@ -4,7 +4,7 @@ import { Tag } from "antd";
 import { IOrderSummary } from "../../constants/interface";
 
 // Utilites
-import { getDate, getDateInYYYYMMDD } from "utilities/date";
+import { getDate, getDateInYYYYMMDD } from "../../utilities/date";
 
 // Scss Styles
 import "./index.scss";

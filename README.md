@@ -9,7 +9,7 @@ Open [http://notch-food-ordering.herokuapp.com/](http://notch-food-ordering.hero
 - [x] Typescript
 - [x] SCSS
 - [x] Redux
-- [ ] Storybook
+- [x] Storybook
 - [ ] Testcases
 
 # Getting Started with Create React App

@@ -2,7 +2,7 @@ import { FC, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 // components
 import SearchBar from "../SearchBar";
-import ResultSection from "../ResultSection";
+import ResultSection from "../OrderTable";
 
 // Types
 import { RootState } from "configureStore";
