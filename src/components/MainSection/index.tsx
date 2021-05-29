@@ -21,9 +21,15 @@ const MainSection: FC = () => {
 
   useEffect(() => {
     updateResult(allSuppliersData);
-    updateDataLoading(false);
+    if (allSuppliersData.length) {
+      updateDataLoading(false);
+    }
   }, [allSuppliersData]);
 
+  /**
+   * This function updates the result data for selected supplier
+   * @param value string - select value from the list of supplier name
+   */
   const updateSearch = (value: string = ALL_SUPPLIER) => {
     let selectedList;
     if (value === ALL_SUPPLIER) {
@@ -36,6 +42,11 @@ const MainSection: FC = () => {
     updateDataLoading(false);
   };
 
+  /**
+   * This function is to add promisify effect i.e. showing
+   * loader for filtered/selected supplier.
+   * @param value string - select value from the list of supplier name
+   */
   const handleSearchBar = (value: string = ALL_SUPPLIER) => {
     if (selectedSupplier !== value) {
       updateDataLoading(true);

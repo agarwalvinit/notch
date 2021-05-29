@@ -13,6 +13,13 @@ const INITIAL_STATE = {
   isSupplierListLoading: true,
 };
 
+/**
+ *
+ * @param state intialize with provided INITIAL_STATE
+ * @param param1 action type object which consists of type @string and payload @object
+ * @returns updated state
+ */
+
 const orderSummary = (
   state = INITIAL_STATE,
   { type, payload }: IActionType

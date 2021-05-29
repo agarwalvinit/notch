@@ -24,6 +24,12 @@ const columns = [
     dataIndex: "deliveryDay",
     render: (date: string) => getDate(date),
     sorter: {
+      /**
+       * This is a date sorter function which sort date accordingly.
+       * @param a current record data
+       * @param b next record data
+       * @returns sorted list in asc/desc date.
+       */
       compare: (a: IOrderSummary, b: IOrderSummary) => {
         const currDate = getDateInYYYYMMDD(a.deliveryDay);
         const nextDate = getDateInYYYYMMDD(b.deliveryDay);
@@ -45,7 +51,9 @@ const columns = [
           <Tag className="m-r-1 bg__color--black txt-white">Market</Tag>
         )}
         {isPendingVendorOnboarding && (
-          <Tag className="bg__color--yellow border--yellow">1st</Tag>
+          <Tag className="bg__color--yellow border--yellow fw-extra-bold">
+            1st
+          </Tag>
         )}
       </>
     ),
@@ -54,6 +62,12 @@ const columns = [
     title: "TOTAL",
     dataIndex: "total",
     sorter: {
+      /**
+       * This is a number sorter function which sort total value accordingly.
+       * @param a current record data
+       * @param b next record data
+       * @returns sorted list in asc/desc value.
+       */
       compare: (a: IOrderSummary, b: IOrderSummary) => a?.total - b?.total,
       multiple: 3,
     },

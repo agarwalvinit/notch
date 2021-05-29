@@ -21,6 +21,8 @@ const SearchBar = ({ handleSearchBar, selectedSupplier }: ISearchBarProps) => {
   const { allSuppliersList, isSupplierListLoading } = useSelector(
     (state: RootState) => state.orderSummary
   );
+
+  // This function will reset the data to default state.
   const handleReset = () => handleSearchBar(ALL_SUPPLIER);
 
   return (

@@ -11,6 +11,13 @@ import {
 const getSupplierListFromMap = (supplierMap: TSupplierMap) =>
   Object.keys(supplierMap);
 
+/**
+ * This function iterates over the list of order data and construct
+ * the vendor/supplier data. destructured data into 3 dispatch so that
+ * it can be used in future for promise request
+ * @param dispatch AppDispatch type
+ * @param data Array<IOrderSummary> type
+ */
 export const saveOrderSummaryActionCreator = (
   dispatch: AppDispatch,
   data: Array<IOrderSummary>
