@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import { Layout } from "antd";
 
 // Styles
-import "styles/components/header.scss";
+import "./index.scss";
 
 const { Header } = Layout;
 

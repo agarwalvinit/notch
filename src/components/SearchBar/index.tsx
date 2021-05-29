@@ -1,26 +1,28 @@
+import { useSelector } from "react-redux";
+
 // Components
 import { Select, Button } from "antd";
 import { ALL_SUPPLIER } from "../../constants";
 
+// Types
+import { RootState } from "configureStore";
+
 // Styles
-import "styles/components/searchBar.scss";
+import "./index.scss";
 
 const { Option } = Select;
 
 interface ISearchBarProps {
-  supplierList: string[];
   selectedSupplier: string;
-  supplierListLoading: boolean;
   handleSearchBar: (value: string) => void;
 }
 
-const SearchBar = ({
-  supplierList,
-  supplierListLoading,
-  handleSearchBar,
-  selectedSupplier,
-}: ISearchBarProps) => {
+const SearchBar = ({ handleSearchBar, selectedSupplier }: ISearchBarProps) => {
+  const { allSuppliersList, isSupplierListLoading } = useSelector(
+    (state: RootState) => state.orderSummary
+  );
   const handleReset = () => handleSearchBar(ALL_SUPPLIER);
+
   return (
     <div className="search-bar__container full-height p-a-2">
       <div className="input__block full-width">
@@ -33,12 +35,12 @@ const SearchBar = ({
           filterOption={(input, option) =>
             option?.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
           }
-          loading={supplierListLoading}
+          loading={isSupplierListLoading}
           value={selectedSupplier}
           onChange={handleSearchBar}
           className="m-r-1 p-b-1"
         >
-          {supplierList.map((item) => (
+          {allSuppliersList.map((item) => (
             <Option value={item} key={item}>
               {item}
             </Option>

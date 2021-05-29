@@ -4,7 +4,9 @@ import { Tag } from "antd";
 import { IOrderSummary } from "../../constants/interface";
 
 // Utilites
-import getDate from "utilities/date";
+import { getDate, getDateInYYYYMMDD } from "utilities/date";
+
+// Scss Styles
 import "./index.scss";
 
 const columns = [
@@ -21,6 +23,14 @@ const columns = [
     title: "DELIVERY DAY",
     dataIndex: "deliveryDay",
     render: (date: string) => getDate(date),
+    sorter: {
+      compare: (a: IOrderSummary, b: IOrderSummary) => {
+        const currDate = getDateInYYYYMMDD(a.deliveryDay);
+        const nextDate = getDateInYYYYMMDD(b.deliveryDay);
+        return currDate.localeCompare(nextDate);
+      },
+      multiple: 3,
+    },
   },
   {
     title: "SUPPLIER",

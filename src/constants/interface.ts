@@ -7,3 +7,8 @@ export interface IOrderSummary {
   isBYOS: boolean;
   total: number | 0;
 }
+
+export interface IActionType {
+  type: string;
+  payload: any;
+}
