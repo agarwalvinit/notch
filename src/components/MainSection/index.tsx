@@ -1,8 +1,12 @@
 import { FC, useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import debounce from "debounce";
 // components
 import SearchBar from "../SearchBar";
 import ResultSection from "../OrderTable";
+
+// Adapters
+import { fetchOrderSummaryBySearchAction } from "actions/orderActions";
 
 // Types
 import { RootState } from "configureStore";
@@ -12,6 +16,7 @@ import { IOrderSummary } from "constants/interface";
 import { ALL_SUPPLIER } from "constants/index";
 
 const MainSection: FC = () => {
+  const dispatch = useDispatch();
   const { suppliersMap, allSuppliersData } = useSelector(
     (state: RootState) => state.orderSummary
   );
@@ -58,12 +63,20 @@ const MainSection: FC = () => {
     }
   };
 
+  const getSupplierDataBySearch: any = (e: any) => {
+    const { value } = e.target;
+    dispatch(fetchOrderSummaryBySearchAction(value));
+  };
+
+  const handleGetSupplierDataBySearch = debounce(getSupplierDataBySearch, 200);
+
   return (
     <>
       <SearchBar
         handleSearchBar={handleSearchBar}
         selectedSupplier={selectedSupplier}
       />
+      <input onChange={handleGetSupplierDataBySearch} />
       <ResultSection result={result} dataLoading={dataLoading} />
     </>
   );
